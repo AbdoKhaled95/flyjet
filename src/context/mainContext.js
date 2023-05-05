@@ -64,7 +64,6 @@ const ltrTheme = createTheme({
       main: "rgb( 41,47,69 )",
       light: "rgb(249, 248, 246)",
       secondary: "rgb(210, 192, 168)",
-      secondary: "rgb(210, 192, 168)",
     },
   },
   components: {

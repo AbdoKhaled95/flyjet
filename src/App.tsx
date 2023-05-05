@@ -6,6 +6,7 @@ import "./i18n";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contacts from "./pages/Contacts/Contacts";
+import About from "./pages/About/About";
 
 function App() {
   const { cacheRtl, rtlTheme, ltrTheme, cacheLtr, dir } = useMainContext();
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </Layout>
         </ThemeProvider>

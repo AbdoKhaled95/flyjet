@@ -5,7 +5,7 @@ import TalkToUs from "../../components/Contact/TalkToUs";
 import Map from "../../components/Map/Map";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import ContactInfo from "./ContactInfo";
+import ContactInfo from "../../components/Contact/ContactInfo";
 import Divider from "@mui/material/Divider";
 import PinDropOutlinedIcon from "@mui/icons-material/PinDropOutlined";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
