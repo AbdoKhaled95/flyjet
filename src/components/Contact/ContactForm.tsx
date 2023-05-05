@@ -141,7 +141,13 @@ const ContactForm = () => {
         <Button
           endIcon={<SendIcon />}
           variant="contained"
+          // color="custom.secondary"
+
           sx={{
+            ":hover": {
+              bgcolor: "white", // theme.palette.primary.main
+              color: "custom.secondary",
+            },
             width: 180,
             height: 48,
             mx: "auto",

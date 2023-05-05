@@ -33,9 +33,11 @@ const ltrTheme = createTheme({
     },
     h2: {
       fontSize: "3rem",
+      fontWeight: 500,
     },
     h3: {
       fontSize: "2rem",
+      fontWeight: 400,
     },
   },
   breakpoints: {
@@ -60,6 +62,9 @@ const ltrTheme = createTheme({
     },
     custom: {
       main: "rgb( 41,47,69 )",
+      light: "rgb(249, 248, 246)",
+      secondary: "rgb(210, 192, 168)",
+      secondary: "rgb(210, 192, 168)",
     },
   },
   components: {
