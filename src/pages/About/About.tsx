@@ -1,13 +1,46 @@
 import React from "react";
 import { Container, Grid, Box, Stack } from "@mui/material";
+
 import aboutUsImage from "../../assets/images/aboutUs.jpg";
 import Typography from "@mui/material/Typography";
 import AboutCard from "../../components/Card/AboutCard";
+import Banner from "../../components/Banner/Banner";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import NavLinks from "../../components/NavLinks/NavLinks";
+import ConnectingAirportsSharpIcon from "@mui/icons-material/ConnectingAirportsSharp";
 
 const About = () => {
   return (
     <>
-      <Box>
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        separator={<ConnectingAirportsSharpIcon sx={{ fontSize: 36 }} />}
+        sx={{
+          fontFamily: "'Poltawski Nowy', serif",
+          position: "absolute",
+          top: "40%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          zIndex: 2,
+          color: "#fff",
+          fontWeight: 600,
+
+          // textTransform: "uppercase",
+          // fontSize: "clamp(2rem, 5vw, 4rem)",
+          // wordSpacing: ".6rem",
+        }}
+      >
+        <NavLinks to={"/"} text={"Home"} />
+        <Typography
+          sx={{ fontSize: "clamp(.8rem, 1.5vw, 1.4rem)", color: "red" }}
+        >
+          About Us
+        </Typography>
+        <NavLinks to={"/flight-training"} text={"Flight training"} />
+      </Breadcrumbs>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Banner bannerHeight={"70vh"} />
+
         <Container
           maxWidth="xl"
           sx={{
@@ -21,6 +54,7 @@ const About = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              py: 4,
               img: {
                 width: "100%",
                 height: "100%",

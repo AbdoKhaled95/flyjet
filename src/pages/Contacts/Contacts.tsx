@@ -10,82 +10,115 @@ import Divider from "@mui/material/Divider";
 import PinDropOutlinedIcon from "@mui/icons-material/PinDropOutlined";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import Banner from "../../components/Banner/Banner";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import NavLinks from "../../components/NavLinks/NavLinks";
+import ConnectingAirportsSharpIcon from "@mui/icons-material/ConnectingAirportsSharp";
 const Contacts = () => {
   return (
     <>
-      <Container
-        maxWidth="xl"
+      <Breadcrumbs
+        aria-label="breadcrumb"
+        separator={<ConnectingAirportsSharpIcon sx={{ fontSize: 36 }} />}
         sx={{
-          padding: "2rem 0",
+          fontFamily: "'Poltawski Nowy', serif",
+          position: "absolute",
+          top: "40%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          zIndex: 2,
+          color: "#fff",
+          fontWeight: 600,
+
+          // textTransform: "uppercase",
+          // fontSize: "clamp(2rem, 5vw, 4rem)",
+          // wordSpacing: ".6rem",
         }}
       >
-        <Grid container spacing={1} xs={12}>
-          <Grid
-            item
-            xl={6}
-            xs={12}
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Map />
-          </Grid>
-          <Grid
-            item
-            xl={6}
-            xs={12}
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <Stack spacing={4}>
-              <Typography variant="h2">Contact Us</Typography>
-              <Stack
-                spacing={3}
-                divider={<Divider orientation="horizontal" flexItem />}
-              >
-                <Stack direction="row" alignItems={"center"} spacing={2}>
-                  <ContactInfo
-                    title="Loaction"
-                    info="17 Markaz Al Maalomat St, Sheraton, Heliopolis, Cairo Governorate, Egypt"
-                  >
-                    <PinDropOutlinedIcon sx={{ color: "secondary.main" }} />
-                  </ContactInfo>
-                </Stack>
-
-                <Stack direction="row" alignItems={"center"} spacing={2}>
-                  <ContactInfo
-                    title="Phone"
-                    phone1="(+2)0222661444"
-                    phone2="(+2)01004484445"
-                    phone3="(+2)01279999033"
-                  >
-                    <LocalPhoneIcon sx={{ color: "secondary.main" }} />
-                  </ContactInfo>
-                </Stack>
-                <Stack direction="row" alignItems={"center"} spacing={2}>
-                  <ContactInfo title="Email" info="info@flyjet.com">
-                    <EmailOutlinedIcon sx={{ color: "secondary.main" }} />
-                  </ContactInfo>
-                </Stack>
-              </Stack>
-            </Stack>
-          </Grid>
-        </Grid>
-      </Container>
-      <Box sx={{ bgcolor: "custom.light" }}>
+        <NavLinks to={"/media"} text={"Media"} />
+        <Typography
+          sx={{ fontSize: "clamp(.8rem, 1.5vw, 1.4rem)", color: "red" }}
+        >
+          Contacts
+        </Typography>
+        <NavLinks to={"/login"} text={"Login"} />
+      </Breadcrumbs>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Banner bannerHeight={"60vh"} />
         <Container
           maxWidth="xl"
           sx={{
-            padding: "4rem 0",
+            padding: "2rem 0",
           }}
         >
-          <Grid container spacing={2}>
-            <Grid item xl={4} xs={12}>
-              <TalkToUs />
+          <Grid container spacing={1} xs={12}>
+            <Grid
+              item
+              xl={6}
+              xs={12}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <Map />
             </Grid>
+            <Grid
+              item
+              xl={6}
+              xs={12}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <Stack spacing={4}>
+                <Typography variant="h2">Contact Us</Typography>
+                <Stack
+                  spacing={3}
+                  divider={<Divider orientation="horizontal" flexItem />}
+                >
+                  <Stack direction="row" alignItems={"center"} spacing={2}>
+                    <ContactInfo
+                      title="Loaction"
+                      info="17 Markaz Al Maalomat St, Sheraton, Heliopolis, Cairo Governorate, Egypt"
+                    >
+                      <PinDropOutlinedIcon sx={{ color: "secondary.main" }} />
+                    </ContactInfo>
+                  </Stack>
 
-            <Grid item xl={8} xs={12}>
-              <ContactForm />
+                  <Stack direction="row" alignItems={"center"} spacing={2}>
+                    <ContactInfo
+                      title="Phone"
+                      phone1="(+2)0222661444"
+                      phone2="(+2)01004484445"
+                      phone3="(+2)01279999033"
+                    >
+                      <LocalPhoneIcon sx={{ color: "secondary.main" }} />
+                    </ContactInfo>
+                  </Stack>
+                  <Stack direction="row" alignItems={"center"} spacing={2}>
+                    <ContactInfo title="Email" info="info@flyjet.com">
+                      <EmailOutlinedIcon sx={{ color: "secondary.main" }} />
+                    </ContactInfo>
+                  </Stack>
+                </Stack>
+              </Stack>
             </Grid>
           </Grid>
         </Container>
+        <Box sx={{ bgcolor: "custom.light" }}>
+          <Container
+            maxWidth="xl"
+            sx={{
+              padding: "4rem 0",
+            }}
+          >
+            <Grid container spacing={2}>
+              <Grid item xl={4} xs={12}>
+                <TalkToUs />
+              </Grid>
+
+              <Grid item xl={8} xs={12}>
+                <ContactForm />
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
       </Box>
     </>
   );

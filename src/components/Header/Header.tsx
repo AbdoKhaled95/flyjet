@@ -19,6 +19,8 @@ import { FaPlane } from "react-icons/fa";
 import logo from "../../assets/images/logo-main.png";
 import { motion } from "framer-motion";
 import { useScrollTrigger } from "@mui/material";
+import { Link } from "react-router-dom";
+import NavLinks from "../NavLinks/NavLinks";
 
 const pages = [
   "Home",
@@ -52,7 +54,9 @@ function Header(props: Props) {
       }}
     >
       <Box sx={{ my: 2 }}>
-        <img src={logo} alt="logo" />
+        <Link to={"/"}>
+          <img src={logo} alt="logo" />
+        </Link>
       </Box>
       <Divider
         sx={{
@@ -137,7 +141,9 @@ function Header(props: Props) {
                 },
               }}
             >
-              <img src={logo} alt="logo" />
+              <Link to={"/"}>
+                <img src={logo} alt="logo" />
+              </Link>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <Drawer
@@ -161,28 +167,12 @@ function Header(props: Props) {
             </Box>
 
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: "16px" }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                  }}
-                >
-                  <Typography
-                    textAlign="center"
-                    textTransform="none"
-                    sx={{
-                      fontSize: "clamp(.8rem, 1.5vw, 1.4rem)",
-                      "&:hover": {
-                        color: "secondary.main",
-                      },
-                    }}
-                  >
-                    {page}
-                  </Typography>
-                </Button>
+              {pages.map((page, i) => (
+                <NavLinks
+                  key={i}
+                  to={page.toLocaleLowerCase().replace(" ", "-")}
+                  text={page}
+                />
               ))}
               <Box>
                 <Button

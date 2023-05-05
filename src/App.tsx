@@ -17,9 +17,11 @@ function App() {
         <ThemeProvider theme={dir === "rtl" ? rtlTheme : ltrTheme}>
           <Layout>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path={"/"} element={<Home />} />
+              <Route path={"/home"} element={<Home />} />
+
               <Route path="/contacts" element={<Contacts />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/about-us" element={<About />} />
             </Routes>
           </Layout>
         </ThemeProvider>
