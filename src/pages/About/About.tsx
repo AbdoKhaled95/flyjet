@@ -63,6 +63,28 @@ const About = () => {
             padding: "2rem 0",
           }}
         >
+          <Typography
+            sx={{
+              textAlign: "center",
+              fontWeight: 600,
+              color: "secondary.main",
+            }}
+            variant="h5"
+          >
+            Why Us
+          </Typography>
+          <Typography
+            sx={{
+              textAlign: "center",
+              fontWeight: 600,
+              mb: 4,
+            }}
+            variant="h3"
+            gutterBottom
+          >
+            Why Choose Our Flynext?
+          </Typography>
+
           <Stack
             direction="row"
             gap={1}
